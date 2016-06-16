@@ -3,6 +3,7 @@ import filters from '../mocks/filters';
 import books from '../mocks/books';
 
 import Menu from './menu';
+import BookList from './bookList';
 
 class Main extends Component {
   constructor () {
@@ -69,10 +70,10 @@ class Main extends Component {
     <main className="main-content">
       
       <Menu filterItems={filterItems} />
-
-      <section className={ className }>
-      { this.state.books.map( book => <li key={ book.title }><img src={ book.cover }/></li>) }
-      </section>
+      <BookList
+        books={books}
+        className={className}  />
+     
 
       <div className={ this.state.navClosed? 'filter filter-is-visible': 'filter' }>
 			  <form>
