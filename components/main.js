@@ -4,6 +4,7 @@ import books from '../mocks/books';
 
 import Menu from './menu';
 import BookList from './bookList';
+import Sidebar from './sidebar';
 
 class Main extends Component {
   constructor () {
@@ -59,7 +60,6 @@ class Main extends Component {
           </li>);
     });
 
-
     let bookListClassName = 'gallery';
 
     if ( this.state.navClosed ) {
@@ -73,21 +73,8 @@ class Main extends Component {
       <BookList
         books={books}
         className={bookListClassName}  />
-     
 
-      <div className={ this.state.navClosed? 'filter filter-is-visible': 'filter' }>
-			  <form>
-				<div className="filter-block">
-					<h4>Search</h4>
-
-					<div className="filter-content">
-						<input type="search" placeholder="title, price..." onChange={ this.onChange }/>
-					</div>
-				</div>
-
-        </form>
-        <a href="#0" className="close" onClick={ this.closeSideBar }>Close</a>
-      </div>
+      <Sidebar navClosed={this.state.navClosed} onChange={this.search} closeSidebar={this.closeSideBar}/>
 
       <a href="#0" className="filter-trigger" onClick={ this.openSideBar }>Filters</a>
     </main>
