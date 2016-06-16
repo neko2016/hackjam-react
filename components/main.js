@@ -59,8 +59,7 @@ class Main extends Component {
 
     const filterItems = this.state.filters.map(filter => {
           return (<li key={ filter.category } onClick={ this.selectTab.bind(null, filter.category) } style={{display: 'inline-style'}}>
-            <Link to="/{filter.category}">{filter.category}</Link>
-            // <a className={filter.selected? 'selected': ''} href="">{filter.category}</a>
+            <Link className={filter.selected? 'selected': ''} to="{filter.category}">{filter.category}</Link>
           </li>);
     });
 
