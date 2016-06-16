@@ -7,7 +7,7 @@ const Menu = (props) => {
 			<div className="tab-filter">
 				<ul>
 					<li className="placeholder">
-						<a data-type="all" href="#0">All</a>
+						<a data-type="all" href="/">All</a>
 					</li>
 					{filterItems}
 				</ul>

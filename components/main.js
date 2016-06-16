@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
+
 import filters from '../mocks/filters';
 import books from '../mocks/books';
 
 import Menu from './menu';
 import BookList from './bookList';
 import Sidebar from './sidebar';
+
 
 class Main extends Component {
   constructor () {
@@ -56,7 +59,8 @@ class Main extends Component {
 
     const filterItems = this.state.filters.map(filter => {
           return (<li key={ filter.category } onClick={ this.selectTab.bind(null, filter.category) } style={{display: 'inline-style'}}>
-            <a className={filter.selected? 'selected': ''} href="#0">{filter.category}</a>
+            <Link to="/{filter.category}">{filter.category}</Link>
+            // <a className={filter.selected? 'selected': ''} href="">{filter.category}</a>
           </li>);
     });
 
