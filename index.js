@@ -1,17 +1,10 @@
-import "./assets/css/reset.css";
-import './assets/css/style.css';
 import React from 'react';
 import { render } from 'react-dom';
-import Header from './components/header';
-import Main from './components/main';
+import { Router, Route, hashHistory } from 'react-router'
+import App from './components/app'
 
-const App = () => {
-  return (
-          <div>
-            <Header/>
-            <Main />
-          </div>
-         );
-};
-
-render(<App/>, document.getElementById('hackjam'));
+render((
+  <Router history={hashHistory}>
+    <Route path='/' component={App}/>
+  </Router>
+), document.getElementById('hackjam'))
