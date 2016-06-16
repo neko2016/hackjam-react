@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import filters from '../mocks/filters';
 import books from '../mocks/books';
 
+import Menu from './menu';
 
 class Main extends Component {
   constructor () {
@@ -66,16 +67,8 @@ class Main extends Component {
 
     return (
     <main className="main-content">
-      <div className="tab-filter-wrapper">
-          <div className="tab-filter">
-            <ul>
-              <li className="placeholder">
-                <a data-type="all" href="#0">All</a>
-              </li>
-              {filterItems}
-            </ul>
-          </div>
-		    </div>
+      
+      <Menu filterItems={filterItems} />
 
       <section className={ className }>
       { this.state.books.map( book => <li key={ book.title }><img src={ book.cover }/></li>) }
