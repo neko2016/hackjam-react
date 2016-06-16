@@ -60,10 +60,10 @@ class Main extends Component {
     });
 
 
-    let className = 'gallery';
+    let bookListClassName = 'gallery';
 
     if ( this.state.navClosed ) {
-      className += ' filter-is-visible';
+      bookListClassName += ' filter-is-visible';
     }
 
     return (
@@ -72,7 +72,7 @@ class Main extends Component {
       <Menu filterItems={filterItems} />
       <BookList
         books={books}
-        className={className}  />
+        className={bookListClassName}  />
      
 
       <div className={ this.state.navClosed? 'filter filter-is-visible': 'filter' }>
